@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add address</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1> Student Management system</h1>
+    <hr>
+    <h2>add address</h2>
+
+    <form th:action="@{/saveAddress/{id}(id=${student.id})}" th:object="${address}" method="post">
+        <input type="hidden" th:field="*{id}">
+    <input type="text" th:field="*{zipCode}" placeholder="Enter city" class="form-control mt-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2">Save address</button>
+    </form>
+</div>
+</body>
+</html>

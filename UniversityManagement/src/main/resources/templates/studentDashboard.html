@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+    <h3>Student dashboard</h3>
+
+    <table style="width:100%" class="table  table-bordered table-dark  ">
+        <thead>
+        <tr>
+            <th> </th>
+            <th> First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>Address</th>
+            <th>Program</th>
+            <th>courses</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tr >
+            <td th:type="hidden" th:filed="${student.id}"></td>
+            <td th:text="${student.FName}"></td>
+            <td th:text="${student.LName}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.gender}"></td>
+            <td th:text="${student.address}"></td>
+            <td th:text="${student.program}"></td>
+            <td >
+                <ul th:each="cr:${student.courses}" >
+                    <li th:text=" ${cr}"></li>
+                </ul>
+            </td>
+            <td >
+                <ul th:each="gr:${student.grades}" >
+                    <li th:text=" ${cr}"></li>
+                </ul>
+            </td>
+<
+        </tr>
+    </table>
+
+
+</div>
+
+</body>
+</html>

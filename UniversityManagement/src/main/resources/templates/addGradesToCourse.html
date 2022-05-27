@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>new Course</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+     <span th:text="${course.courseName}"></span>
+<table style="width:100%" class="table  table-bordered table-dark  ">
+    <thead>
+    <tr>
+        <th> </th>
+        <th> Name</th>
+        <th>Family </th>
+        <th>students</th>
+        <th>grade</th>
+
+        <!--            <th>Address</th>-->
+
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tr th:each="st:${students}">
+        <form th:action="@{/courseSt/grade/save/{id}(id=${st.id})}"  th:object="${Grade}" method="post">
+<!--        <td th:type="hidden" th:filed="${st.id}"></td>-->
+        <td th:text="${st.FName}"></td>
+        <td th:text="${st.LName}"></td>
+        <td th:text="${st.program}"></td>
+
+         <td><input type="number" step="0.01" th:field="*{grade}" placeholder="Enter grade"  class="form-control mt-4 col-4">
+             <input type="hidden"  th:field="${Grade.id}" th:value="${null}">
+             <input type="hidden"  th:field="${Grade.course}" th:value="${Grade.course}">
+             <input type="hidden" th:filed="*{student}"  th:value="${st}">
+        <td>
+
+            <button type="submit" class="btn btn-info col-2">Save student</button>
+
+        </td>
+        </form>
+    </tr>
+</table>
+
+</body>
+</html>

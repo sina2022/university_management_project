@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+    <h3>Professor List</h3>
+
+    <table style="width:100%" class="table  table-bordered table-dark  ">
+        <thead>
+        <tr>
+            <th> </th>
+            <th> First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>Address</th>
+            <th>courses</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tr th:each="prof:${professors}">
+            <td th:type="hidden" th:filed="${prof.id}"></td>
+            <td th:text="${prof.FName}"></td>
+            <td th:text="${prof.LName}"></td>
+            <td th:text="${prof.email}"></td>
+            <td th:text="${prof.gender}"></td>
+            <td th:text="${prof.address}"></td>
+            <td >
+                <ul th:each="cr:${prof.courses}" >
+                    <li th:text=" ${cr}"></li>
+                </ul>
+            </td>
+<!--            <td  th:each="cor:${prof.getCourses()}" ><span th:text=" ${cor}" ></span> </td>-->
+
+            <td>
+<!--                <a th:href="@{/showFormForUpdate/{id}(id=${prof.FName})}" class="btn btn-primary">Update</a>-->
+                <a th:href="@{/addCourseToProfessor/{id}(id=${prof.id})}" class="btn btn-danger">add course</a>
+                <a th:href="@{/addProfAddress/{id}(id=${prof.id})}" class="btn btn-primary">add address</a>
+                <a th:href="@{/deleteProfessor/{id}(id=${prof.id})}" class="btn btn-danger">Delete</a>
+<!--                <a th:href="@{/addProgram/{id}(id=${st.id})}" class="btn btn-primary">add program</a>-->
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/addNewProfessor}" class="btn btn-primary btn-sm mb-3">Add New Professor</a>
+</div>
+
+</body>
+</html>

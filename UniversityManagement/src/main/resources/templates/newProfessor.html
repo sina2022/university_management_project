@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Save Employees</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1> Professor Management system</h1>
+  <hr>
+  <h2>Save Professor</h2>
+  <form th:action="@{/saveProfessor}" th:object="${professor}" method="post">
+    <input type="text" th:field="*{FName}"
+           placeholder="Enter professor first name" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('FName')}" th:errorclass="error" th:errors="*{FName}"></p>
+
+    <input type="text" th:field="*{LName}"
+           placeholder="Enter professor last name" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('LName')}" th:errorclass="error" th:errors="*{LName}"></p>
+
+
+    <input type="text" th:field="*{email}" placeholder="enter Professor email" class="form-control mb-4 col-4"/>
+    <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></p>
+
+    <select name="gender" class="form-control mb-4 col-4">
+      <option th:each="gender : ${T(com.jac.assignment2.model.Gender).values()}"
+              th:value="${gender}" th:text="${gender.toString().toLowerCase()}"></option>
+    </select>
+
+    <label>Showing all the server errors</label>
+    <ul>
+      <li th:each="err :${#fields.errors()}" th:text="${err}" class="error"></li>
+    </ul>
+
+
+    <button type="submit" class="btn btn-info col-2">Save Professor</button>
+  </form>
+</div>
+
+</body>
+</html>
+
+<style>
+  .error{
+    color: red
+  }
+</style>

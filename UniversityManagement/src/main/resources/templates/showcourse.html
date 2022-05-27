@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>new Course</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+     <span th:text="${course.courseName}"></span>
+<table style="width:100%" class="table  table-bordered table-dark  ">
+    <thead>
+    <tr>
+        <th> </th>
+        <th> Name</th>
+        <th>students</th>
+
+        <!--            <th>Address</th>-->
+
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tr th:each="st:${students}">
+        <td th:type="hidden" th:filed="${st.id}"></td>
+        <td th:text="${st.FName}"></td>
+        <td th:text="${st.LName}"></td>
+        <td th:text="${st.address}"></td>
+        <td th:text="${st.program}"></td>
+
+        <td>
+            <a th:href="@{/showFormForUpdate/{id}(id=${st.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/deleteStudent/{id}(id=${st.id})}" class="btn btn-danger">delete</a>
+            <a th:href="@{/addAddress/{id}(id=${st.id})}" class="btn btn-primary">add address</a>
+            <a th:href="@{/addProgram/{id}(id=${st.id})}" class="btn btn-primary">add program</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
