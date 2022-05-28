@@ -16,10 +16,9 @@
         <thead>
         <tr>
             <th> </th>
-            <th> First Name</th>
+            <th>First Name</th>
             <th>Last Name</th>
             <th>email</th>
-            <th>gender</th>
             <th>Address</th>
             <th>courses</th>
             <th>Action</th>
@@ -30,7 +29,6 @@
             <td th:text="${prof.FName}"></td>
             <td th:text="${prof.LName}"></td>
             <td th:text="${prof.email}"></td>
-            <td th:text="${prof.gender}"></td>
             <td th:text="${prof.address}"></td>
             <td >
                 <ul th:each="cr:${prof.courses}" >
@@ -51,6 +49,7 @@
 
     <br>
     <a th:href="@{/addNewProfessor}" class="btn btn-primary btn-sm mb-3">Add New Professor</a>
+    <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
 </div>
 
 </body>

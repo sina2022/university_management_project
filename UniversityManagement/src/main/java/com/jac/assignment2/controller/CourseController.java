@@ -38,7 +38,7 @@ public class CourseController {
     @PostMapping("/saveCourse")
     public String saveCourse(@ModelAttribute("course") Course course){
         service.addCourse(course);
-        return "allCourses";
+        return "redirect:/course";
     }
 
     @GetMapping("/addCourse/{id}")

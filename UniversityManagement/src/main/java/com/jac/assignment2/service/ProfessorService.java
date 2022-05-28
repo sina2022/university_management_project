@@ -2,16 +2,12 @@ package com.jac.assignment2.service;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jac.assignment2.model.Professor;
-import com.jac.assignment2.model.Student;
-import com.jac.assignment2.repository.AddressRepository;
-import com.jac.assignment2.repository.ProfessorRepository;
-import com.jac.assignment2.repository.ProgramRepository;
-import com.jac.assignment2.repository.UserRepository;
+import com.jac.assignment2.model.*;
+import com.jac.assignment2.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ProfessorService {
@@ -23,6 +19,8 @@ public class ProfessorService {
     private AddressRepository addressRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private CourseRepository courseRepository;
 
     private ObjectMapper mapper;
 
@@ -51,6 +49,7 @@ public class ProfessorService {
     }
 
     public void deleteProfessor(Long id){
+
         repository.deleteById(id);
     }
 

@@ -51,7 +51,7 @@ public class StudentController {
         }
         service.saveStudent(saveStudent);
 
-        return "index";
+        return "redirect:/students";
     }
 
     @GetMapping("/addAddress/{id}")
@@ -75,25 +75,45 @@ public class StudentController {
 
         return "redirect:/students";
     }
+
+
+    @GetMapping("/programs")
+    public String getPrograms(Model model){
+        List<Program> programs=programService.getPrograms();
+        model.addAttribute("programs",programs);
+        return "allPrograms";
+    }
+
     @GetMapping("/addProgram")
     public String addProgram(Model model){
         Program program =new Program();
         model.addAttribute("program", program);
         return "addNewProgram";
     }
+
     @PostMapping("/saveProgram")
     public String saveProgram(@Valid @ModelAttribute("program") Program program, BindingResult result){
         if (result.hasErrors()){
-            return "newStudent";
+            return "addNewProgram";
         }
-      programService.saveClass(program);
-        return "redirect:/students";
+      programService.saveProgram(program);
+      return "redirect:/programs";
+    }
+
+    @GetMapping("/programStudents/{id}")
+    public String programStudents(Model model, @PathVariable Long id){
+        Program program= programService.findProgramById(id);
+        List<Student> students =program.getStudents();
+
+        model.addAttribute("students",students);
+        model.addAttribute("program",program);
+        return "showProgram";
     }
 
     @GetMapping("/addProgram/{id}")
     public String addProgramToSt(Model model, @PathVariable Long id){
         Student student=service.findStudentById(id);
-        List<Program> programList = programService.getClasses();
+        List<Program> programList = programService.getPrograms();
         Program program=new Program();
         model.addAttribute("programs", programList);
         model.addAttribute("student",student);
@@ -106,7 +126,7 @@ public class StudentController {
         Program program=student.getProgram();
         program.addStudent(student);
         service.saveStudent(student);
-        programService.saveClass(program);
+        programService.saveProgram(program);
         return "users";
     }
 

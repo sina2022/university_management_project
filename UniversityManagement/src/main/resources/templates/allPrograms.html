@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-<h3>Course List</h3>
+<h3>Student List</h3>
 
 <table style="width:100%" class="table  table-bordered table-dark  ">
     <thead>
@@ -21,18 +21,21 @@
         <th>Action</th>
     </tr>
     </thead>
-    <tr th:each="cr:${courses}">
-        <td th:type="hidden" th:filed="${cr.id}"></td>
-        <td th:text="${cr.courseName}"></td>
+    <tr th:each="pr:${programs}">
+        <td th:type="hidden" th:filed="${pr.id}"></td>
+        <td th:text="${pr.programName}"></td>
         <td>
-            <a th:href="@{/courseStudents/{id}(id=${cr.id})}" class="btn btn-primary">see all the student in this course</a>
+            <a th:href="@{/programStudents/{id}(id=${pr.id})}" class="btn btn-primary">see all the student in this program</a>
 
         </td>
     </tr>
 
 </table>
-                <a th:href="@{/addCourse}" class="btn btn-primary">add course</a>
+                <a th:href="@{/addProgram}" class="btn btn-primary">add new program</a>
+    <br>
+    <br>
                 <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
+
 </div>
 </body>
 </html>

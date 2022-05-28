@@ -14,33 +14,24 @@
     <thead>
     <tr>
         <th> </th>
-        <th> Name</th>
-        <th>students</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th> Email</th>
 
-        <!--            <th>Address</th>-->
 
-        <th>Action</th>
     </tr>
     </thead>
     <tr th:each="st:${students}">
         <td th:type="hidden" th:filed="${st.id}"></td>
-        <td th:text="${st.name}"></td>
-        <td th:text="${st.address}"></td>
-        <td th:text="${st.program}"></td>
-
-        <!--            <td th:text="${st.address!=null}?${st.address}:' &#45;&#45; '"></td>-->
+        <td th:text="${st.FName}"></td>
+        <td th:text="${st.LName}"></td>
+        <td th:text="${st.email}"></td>
 
 
-        <!--            <td  th:each="cor:${st.getCourses()}" ><span th:text=" ${cor}" ></span> </td>-->
-
-        <td>
-            <a th:href="@{/showFormForUpdate/{id}(id=${st.id})}" class="btn btn-primary">Update</a>
-            <a th:href="@{/deleteStudent/{id}(id=${st.id})}" class="btn btn-danger">delete</a>
-            <a th:href="@{/addAddress/{id}(id=${st.id})}" class="btn btn-primary">add address</a>
-            <a th:href="@{/addProgram/{id}(id=${st.id})}" class="btn btn-primary">add program</a>
-        </td>
     </tr>
 </table>
 
+     <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
+     <a th:href="@{/programs}" class="btn btn-primary btn-sm mb-3">go back to program list</a>
 </body>
 </html>

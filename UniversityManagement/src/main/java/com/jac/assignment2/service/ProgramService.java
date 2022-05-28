@@ -19,12 +19,12 @@ public class ProgramService {
 
 
 
-    public List<Program> getClasses(){
+    public List<Program> getPrograms(){
         List<Program> programList =(List<Program>) programRepository.findAll();
         return programList;
     }
 
-    public void saveClass(Program program){
+    public void saveProgram(Program program){
         programRepository.save(program);
     }
 
