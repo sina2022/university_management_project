@@ -1,5 +1,6 @@
 package com.jac.assignment2.service;
 
+import com.jac.assignment2.exception.RecordNotFoundException;
 import com.jac.assignment2.model.*;
 import com.jac.assignment2.repository.*;
 import org.springframework.beans.factory.annotation.*;
@@ -21,8 +22,12 @@ public class CourseService {
         repository.save(course);
     }
 
-    public Course findCourseById(Long id){
-        Course course=repository.findById(id).get();
-        return course;
+    public Course findCourseById(Long id) throws RecordNotFoundException {
+        Optional<Course> course = repository.findById(id);
+        if (course.isPresent()) {
+            return course.get();
+        } else {
+            throw new RecordNotFoundException("There is no course of this id.");
+        }
     }
 }

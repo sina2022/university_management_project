@@ -1,6 +1,7 @@
 package com.jac.assignment2.service;
 
 
+import com.jac.assignment2.exception.RecordNotFoundException;
 import com.jac.assignment2.model.*;
 import com.jac.assignment2.repository.*;
 import org.springframework.beans.factory.annotation.*;
@@ -37,10 +38,14 @@ public class GradeService {
         repository.save(grade);
     }
 
-    public Grade getGradeById(long id){
-       Grade grade= repository.findById(id).get();
-        List<Grade> grades=( List<Grade>)repository.findAll();
-       return grade;
+    public Grade getGradeById(long id) throws RecordNotFoundException {
+      Optional<Grade> grade= repository.findById(id);
+      if(grade.isPresent()){
+          List<Grade> grades=( List<Grade>)repository.findAll();
+          return grade.get();
+      } else {
+          throw new RecordNotFoundException("There is no grade related to this id");
+      }
     }
 
 //    public void updateGrade(Student st,Course cr,Grade grade){

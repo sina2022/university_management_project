@@ -2,6 +2,7 @@ package com.jac.assignment2.controller;
 
 
 import com.fasterxml.jackson.databind.*;
+import com.jac.assignment2.exception.RecordNotFoundException;
 import com.jac.assignment2.model.*;
 import com.jac.assignment2.service.*;
 import org.springframework.beans.factory.annotation.*;
@@ -55,7 +56,7 @@ public class StudentController {
     }
 
     @GetMapping("/addAddress/{id}")
-    public String addAddress(Model model, @PathVariable Long id){
+    public String addAddress(Model model, @PathVariable Long id) throws RecordNotFoundException {
         Address address=new Address();
         Student student=service.findStudentById(id);
         model.addAttribute("student",student);
@@ -64,7 +65,7 @@ public class StudentController {
     }
 
     @PostMapping("/saveAddress/{id}")
-    public String saveAddress( @PathVariable Long id,@Valid @ModelAttribute("address") Address address , BindingResult result){
+    public String saveAddress( @PathVariable Long id,@Valid @ModelAttribute("address") Address address , BindingResult result) throws RecordNotFoundException {
 
         if (result.hasErrors()){
             return "newStudent";
@@ -101,7 +102,7 @@ public class StudentController {
     }
 
     @GetMapping("/programStudents/{id}")
-    public String programStudents(Model model, @PathVariable Long id){
+    public String programStudents(Model model, @PathVariable Long id) throws RecordNotFoundException {
         Program program= programService.findProgramById(id);
         List<Student> students =program.getStudents();
 
@@ -111,7 +112,7 @@ public class StudentController {
     }
 
     @GetMapping("/addProgram/{id}")
-    public String addProgramToSt(Model model, @PathVariable Long id){
+    public String addProgramToSt(Model model, @PathVariable Long id) throws RecordNotFoundException {
         Student student=service.findStudentById(id);
         List<Program> programList = programService.getPrograms();
         Program program=new Program();
@@ -131,14 +132,14 @@ public class StudentController {
     }
 
     @GetMapping("/show/{id}")
-    public  String showStudent(Model model,@PathVariable Long id){
+    public  String showStudent(Model model,@PathVariable Long id) throws RecordNotFoundException {
         Student student=service.findStudentById(id);
         model.addAttribute("student",student);
         return "showStudent";
     }
 
     @GetMapping("/showprogramStudents/{id}")
-    public String showProgramStudents(Model model,@PathVariable Long id){
+    public String showProgramStudents(Model model,@PathVariable Long id) throws RecordNotFoundException {
         Program program=programService.findProgramById(id);
         List<Student> students=program.getStudents();
         model.addAttribute("program",program);
@@ -147,7 +148,7 @@ public class StudentController {
     }
 
     @GetMapping("/courseStudents/{id}")
-    public String showcourseStudents(Model model,@PathVariable Long id){
+    public String showcourseStudents(Model model,@PathVariable Long id) throws RecordNotFoundException {
        Course course=courseService.findCourseById(id);
         Set<Student> students=course.getStudents();
         model.addAttribute("course",course);
