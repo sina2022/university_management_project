@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Rubik:ital,wght@0,500;0,600;1,400&display=swap}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.15.4/css/all.css}"  />
+ 
+    
+    <title>Future</title>
+    
+</head>
+<body>
+   
+       
+   <nav >
+     <img  alt="Future logo" th:src="@{/img/logo.jpg}"/>
+     <div class="navigation">
+     <ul>
+         <li><a th:href="@{index}">Home</a></li>
+         <li><a th:href="@{#programs}">Our programs</a></li>
+         <li><a th:href="@{#signup}">Admission</a></li>
+         <li><a th:href="{@login}">Login</a></li>
+           
+     </ul>
+     </div>  
+   </nav>
+</header>
+
+<main>
+
+    <section class="section-hero">
+       
+
+    <h2>Enhance your Future with Future </h2>
+    <p >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cum temporibus molestiae nemo ea
+         in obcaecati, excepturi perspiciatis maiores deserunt quisquam consectetur, accusantium eius veritatis, non aspernatur. Aperiam, magni odit.
+    </p>
+    <div class="btn">
+       <a class="blue" th: href="@{#programs}">Check our Program</a>
+      <a class="yellow" th: href="@{#signup}" >Admission </a>;
+    </div>
+   
+    </section>
+
+
+    
+    <section class="section-featured">
+       <h1>Awesome Features</h1>
+       <p>Replenish man have things gatering lights yielding shall you</p>
+       <div class="feature-base">
+         <div class="fea-box">
+          <i class="fas fa-graduation-cap"></i>
+          <h3> Scholarship Facility</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat porro minima quis </p>
+         </div>
+         <div class="fea-box">
+          <i class="fas fa-laptop-code"></i>
+          <h3> Dell Online course</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat porro minima quis </p>
+         </div>
+         <div class="fea-box">
+          <i class="fas fa-award"></i>
+          <h3> Global cerification</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat porro minima quis </p>
+         </div>
+       </div>
+      </section>
+
+
+
+      <section class="section-course" id="programs">
+        <h1>Our Popular programs</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+
+
+      <div class="course-box">
+
+        <div class="courses">
+          <img th:src="@{/img/computerscience.jpg}" alt="computer-course">
+          <div class="details">
+            <span>Updated 05/05/22</span>
+            <h6>Computer Science </h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="program-btn">
+            <a class="yellow" th:href="@{courses}">Learn more</a>
+           </div> 
+        </div>
+
+        <div class="courses">
+          <img th:src="@{/img/accounting.jpg}" alt="accounting">
+          <div class="details">
+            <span>Updated 05/05/22</span>
+            <h6>Comoputerized Accounting</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="program-btn">
+            <a class="yellow" th:href="@{index}">Learn more</a>
+           </div> 
+        </div>
+
+       <div class="courses">
+          <img th:src="@{/img/bussiness.jpg}" alt="bussiness-tech">
+          <div class="details">
+            <span>Updated 05/05/22</span>
+            <h6>Bussiness Technology</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+            <div class="program-btn">
+              <a class="yellow" href="#">Learn more</a>
+             </div> 
+            </div>
+        <div class="courses">
+          <img th:src="@{/img/hotelmanagement.jpg}" alt="hotelmanagement">
+          <div class="details">
+            <span>Updated 05/05/22</span>
+            <h6>Hotel Management</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="program-btn">
+            <a class="yellow" href="#">Learn more</a>
+           </div> 
+        </div>
+
+        <div class="courses">
+          <img th:src="@{/img/cisco.jpg}" alt="cisco">
+          <div class="details">
+            <span>Updated 05/05/22</span>
+            <h6>Cisco Networking</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="program-btn">
+            <a class="yellow" href="#">Learn more</a>
+           </div> 
+        </div>
+
+        <div class="courses">
+          <img th:src="@{img/fasion.jpg}" alt="fasion">
+          <div class="details">
+            <span>Updated 05/05/22</span>
+            <h6>Fasion & Art/design</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="program-btn">
+            <a class="yellow" href="#">Learn more</a>
+           </div> 
+        </div>
+      
+      </section>
+
+    <section class = "registration-section" id ="signup">
+      <div class="reminder">
+        <h1>Reserve your place</h1>
+        <p> AS of now, accelerate your registration process by compleing it through our secure online registration form </p>
+        <div class="time">
+          <div  class="date">18 <br> Days</div>
+          <div  class="date">23 <br> Hours</div>
+          <div  class="date">06 <br> minutes</div>
+          <div  class="date">58 <br> seconds</div> 
+        </div>
+      </div> 
+
+      <div class="btn">
+       <a class="yellow" th:href="@{registration}">Start Your Registration now!</a>
+      </div> 
+
+  
+    </section>
+
+    <section class="professor">
+      <h1>Community Experts</h1>
+      <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+     
+      <div class="expert-box">
+       
+        <div class="profile">
+          <img th:src="@{/img/1.jpg}" alt="Jone Doe">
+          <h6>John Doe</h6>
+          <p>computer Science Expert</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+        <div class="profile">
+          <img th:src="@{/img/2.jpg}" alt="Tom Jonson">
+          <h6>Tom Jonson</h6>
+          <p>Cisco Expert</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+        <div class="profile">
+          <img th:src="@{/img/3.jpg}" alt="Sara Wang">
+          <h6>Sara Wang</h6>
+          <p> Fashion Design Expert</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+        <div class="profile">
+          <img th:src="@{/img/4.jpg}" alt="Mary Smith">
+          <h6>Mary Smith</h6>
+          <p>Accounting Expert</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+</main>  
+            <footer class="footer-section">
+            <div class="footer-col">
+              <h3>Top Products</h3>
+              <li>Manage Reputation</li>
+              <li>Power Tools</li>
+              <li>Managed Websites</li>
+              <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <li>Jobs</li>
+              <li>Brand Assets</li>
+              <li>Investor Relations</li>
+              <li>Terms of Serivce</li>
+            </div>
+            <div class="footer-col">
+              <h3>Features</h3>
+              <li>Manage Reputation</li>
+              <li>Power Tools</li>
+              <li>Managed Websites</li>
+              <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+              <h3>Resources</h3>
+              <li>Research</li>
+              <li>Experts</li>
+              <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+              <h3>Newsletter</h3>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+
+             <div class="subscribe"></div>
+             <input type="text" placeholder="Your Email address">
+             <a href="#" class="yellow">SUBSCRIBE</a>
+            </div>
+            <div class="copyright">
+              <p>Copyright @2022 ALL rights reserved by school</p>
+              <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+            </div>
+
+            </footer>
+    
+
+
+   
+    
+</body>
+</html>
