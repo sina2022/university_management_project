@@ -20,13 +20,13 @@
    
        
    <nav >
-     <img  alt="Future logo" src="img/logo.jpg"/>
+     <img  alt="Future logo" th:src="@{/img/logo.jpg}"/>
      <div class="navigation">
      <ul>
-      <li><a th:href="@{index}">Home</a></li>
-      <li><a th:href="@{index}">Our programs</a></li>
-      <li><a th:href="@{#signup}">Admission</a></li>
-      <li><a th:href="{@login}">Login</a></li>
+      <li><a th:href="@{/index}">Home</a></li>
+      <li><a th:href="@{/index}">Our programs</a></li>
+      <li><a href="#signup">Admission</a></li>
+      <li><a th:href="{@/login}">Login</a></li>
            
      </ul>
      </div>  
@@ -38,7 +38,7 @@
       <section class="section-course">
         <h1>About Computer Science</h1>
 
-        <img src="img/computerscience.jpg" alt="computer-course">
+        <img th:src="@{/img/computerscience.jpg}" alt="computer-course">
 
        <p>The Computer Science Technology DEC, with a Programming profile, was developed with support from the information technology business community and will propel you straight towards a promising career with excellent job prospects.
 
@@ -51,7 +51,7 @@
 
       <div class="course-box">
         <div class="courses">
-          <img src="img/html-course.jpg" alt="html-course">
+          <img th:src="@{/img/html-course.jpg}" alt="html-course">
           <div class="details">
             <span>Html & Css </span>
             <h6>Get started as a web developer <br/>by learning the basics of HTML and the fundamentals of CSS </h6>
@@ -61,7 +61,7 @@
         
 
         <div class="courses">
-          <img src="img/javascriptcourse.png" alt="javascriptcourse">
+          <img th:src="@{/img/javascriptcourse.png}" alt="javascriptcourse">
           <div class="details">
             <span>JavaScript </span>
             <h6>Learn the fundamentals of JavaScript:
@@ -74,7 +74,7 @@
         </div>
 
        <div class="courses">
-          <img src="img/javacourse.jpg" alt="bussiness-tech">
+          <img th:src="@{img/javacourse.jpg}" alt="bussiness-tech">
           <div class="details">
             <span>Java Full Course</span>
             <h6>Learn the basics of 
@@ -86,7 +86,7 @@
 
 
         <div class="courses">
-          <img src="img/databasecourses.jpg" alt="hotelmanagement">
+          <img th:src="@{/img/databasecourses.jpg}" alt="hotelmanagement">
           <div class="details">
             <span>Database</span>
             <h6>Learn the basics of <br>
@@ -97,7 +97,7 @@
         </div>
 
         <div class="courses">
-          <img src="img/datastructure.png" alt="cisco">
+          <img th:src="@{img/datastructure.png}" alt="cisco">
           <div class="details">
             <span>DataStructure & Algorithms</span>
             <h6>Learn the basics of <br>DataStructure and Algorithms</h6>
@@ -107,7 +107,7 @@
         </div>
 
         <div class="courses">
-          <img src="img/springcourse.jpg" alt="fasion">
+          <img th:src="@{/img/springcourse.jpg}" alt="fasion">
           <div class="details">
             <span>Java Spring</span>
             <h6>Learn the popular Java framework</h6>
@@ -132,7 +132,7 @@
             </div> 
       
             <div class="btn">
-             <a class="yellow" th:href="@{registration}">Start Your Registration now!</a>
+             <a class="yellow" th:href="@{/registration}">Start Your Registration now!</a>
             </div> 
       
      

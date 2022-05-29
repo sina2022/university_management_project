@@ -16,14 +16,14 @@
 </head>
 <body>
    <nav >
-     <img  alt="Future logo" th:src="@{/images/logo.jpg}"/>
+     <img  alt="Future logo" th:src="@{/img/logo.jpg}"/>
      <div class="navigation">
      <ul>
-      <li><a th:href="@{index}">Home</a></li>
-      <li><a th:href="@{index}">Our programs</a></li>
+      <li><a th:href="@{/index}">Home</a></li>
+      <li><a th:href="@{/index}">Our programs</a></li>
       <li><a href="#signup">Admission</a></li>
-       <li><a th:href="@{/login}">Login</a></li>-->
-
+      <li><a th:href="@{/login}">Login</a></li>
+           
      </ul>
      </div>  
    </nav>
@@ -55,47 +55,42 @@
 
        <section class = "registration-section" id ="signup">
       
-        <form class="form" th:action="@{/process_register}" th:object="${user}" method="post" >
+        <form class="form"  action="@{/}" th:object="${}" method="post">
             <h1> Admission Request</h1>   
          
-          <label>First Name</label>
-         <input type="text" name="first_name"  />
+          <label>First Name:</label>
+         <input type="text" name="first_name" th: field ="*{FirstName}" />
           <label>Last Name</label>
-          <input type="text" name="last_name"  />
+          <input type="text" name="last_name" th: field ="*{LastName}" />
           <label for="gender">Gender</label>
-          <select id="gender" name="gender" >
+          <select id="gender" name="gender" th:filed="*{gender}">
             <option th:value="'Male'" th:text="Male">Male</option>
             <option th:value="'Female'" th:text="Female">Female</option>
             </select>
           <label> Date of birth</label>
-          <input type="date" name=“date_of_birth />
+          <input type="date" name=“date_of_birth th: field ="*{dateOfbirth}"/>
           <label>Phone Number</label>
-          <input type="text" name="Phone_number" />
+          <input type="text" name="Phone_number" th: field ="*{phoneNumber}"/>
           <label>Email</label>
-          <input type="email" name="email"  th:field="*{email}"/>
-            <label >Password: </label>
-                <input type="password" th:field="*{password}" class="form-control"
-                       required minlength="6" maxlength="10"/>
-            </div>
+          <input type="email" name="email" th: field ="*{email}"/>
           <label> Address</label>
-          <input type="email" name=“address />
+          <input type="email" name=“address th: field ="*{address}"/>
           <label for="programs">Choose one program:</label>
-          <select id="programs" name="programs" >
-            <option value="Computer Science" >Computer Science</option>
-            <option value="Fashoin & Art">Fashoin and Art</option>
-            <option value="hotel Management" > Hotel Management</option>
-            <option value="Computerized Accounting">Computerized Accounting</option>
-            <option value="Bussiness Technology" >Bussiness Technology</option>
+          <select id="programs" name="programs" th:field="*{program}">
+            <option th:value="'Computer Science'" th:text="Computer Science">Computer Science</option>
+            <option th:value="'Fashoin & Art'"th: text="Fashoin & Art">Fashoin & Art</option>
+            <option th:value="'hotel Management'" th:text=" Hotel Management"> Hotel Management</option>
+            <option th:value="'Computerized Accounting'"th:text="Computerized Accounting">Computerized Accounting</option>
+            <option th:value="'Bussiness Technology'" th:text="Bussiness Technology">Bussiness Technology</option> 
            
           </select>  
-<!--          <a class="yellow" th:href="@{registration}">submit</a>-->
-            <button type="submit" class="btn yellow">Sign Up</button>
+          <a class="yellow" th:href="@{/registration}">submit</a>
         </form> 
 
         <div class="img">
-            <img th:src="@{/images/registrationAction.jpg}" alt="online-registration">
+            <img th:src="@{img/registrationAction.jpg}" alt="online-registration">
         </div>
-
+        
       </section>
   
     

@@ -13,7 +13,7 @@
         <nav class="nav">
           <div>
               <img class="pt-2"
-                  src="img/logo.jpg"
+                  th:src="@{/img/logo.jpg}"
                   alt="school logo"
               />
               
@@ -24,7 +24,7 @@
               <a class="nav__link" th:href="@{/index}">Home</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link nav__link--btn" th:href="@{index}"
+              <a class="nav__link nav__link--btn" th:href="@{/index}"
                 >Log out</a>
             </li>
           </ul>
@@ -47,21 +47,21 @@
                 <div class="grid-item"> 
             <h3 class="grid-header">Phone Number</h3>
             <h3 class= "grid-content" th:text="${phoneNumber}"></h3>
-            <button class="edit"> <a th:href="@{edit}">Edit</a></button> 
+            <button class="edit"> <a th:href="@{/edit}">Edit</a></button> 
             </div>
            
             <div class="grid-item">
               
             <h3 class="grid-header">Email</h3>
             <h3 class= "grid-content" th:text="${email}"></h3>
-            <button class="edit"> <a th:href="@{edit}">Edit</a></button>
+            <button class="edit"> <a th:href="@{/edit}">Edit</a></button>
             </div>
 
             <div class="grid-item">
              
             <h3 class="grid-header">Address</h3>
             <h3 class= "grid-content" th:text="${street}<br>  + ${city} + ', '+ ${postcode}">105 Street Blue <br> Montreal, J173g9</h3> 
-            <button class="edit"> <a th:href="@{edit}">Edit</a></button> 
+            <button class="edit"> <a th:href="@{/edit}">Edit</a></button> 
             </div>
           </div>
         </section>

@@ -3,12 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>add students to course</title>
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
+          crossorigin="anonymous"> -->
+          <link rel="stylesheet" th:href="@{/css/professor.css}"  />
 </head>
 <body>
+    <header class="header">
+        <nav class="nav">
+          <div>
+              <img class="pt-2"
+                  th:src="@{/img/logo.jpg}"
+                  alt="school logo"
+              />
+              
+          </div>
+          
+          <ul class="nav__links">
+            <li class="nav__item">
+              <a class="nav__link" th:href="@{/index}">Home</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link--btn" th:href="@{index}"
+                >Log out</a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <section>
 <h4> select your course</h4>
 <!--/*@thymesVar id="coursesList" type="java.util.List"*/-->
 <form th:action="@{/saveCoursesToStudent/{id}(id=${student.id})}" th:object="${newStudent}" method="post">
@@ -35,5 +58,52 @@
 
     <button type="submit" class="btn btn-info col-2">Save class</button>
 </form>
+</section>
+<footer class="footer-section">
+    <div class="footer-col">
+      <h3>Top Products</h3>
+      <li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Websites</li>
+      <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <li>Jobs</li>
+      <li>Brand Assets</li>
+      <li>Investor Relations</li>
+      <li>Terms of Serivce</li>
+    </div>
+    <div class="footer-col">
+      <h3>Features</h3>
+      <li>Manage Reputation</li>
+      <li>Power Tools</li>
+      <li>Managed Websites</li>
+      <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <li>Research</li>
+      <li>Experts</li>
+      <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+      <h3>Newsletter</h3>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+
+     <div class="subscribe"></div>
+     <input type="text" placeholder="Your Email address">
+     <a href="#" class="yellow">SUBSCRIBE</a>
+    </div>
+    <div class="copyright">
+      <p>Copyright @2022 ALL rights reserved by school</p>
+      <div class="pro-links">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+      </div>
+    </div>
+
+    </footer>
 </body>
 </html>

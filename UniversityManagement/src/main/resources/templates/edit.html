@@ -12,7 +12,7 @@
         <nav class="nav">
           <div>
               <img class="pt-2"
-                  src="img/logo.jpg"
+                  th:src="@{/img/logo.jpg}"
                   alt="school logo"
               />
               
@@ -23,7 +23,7 @@
               <a class="nav__link" th:href="@{/index}">Home</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link nav__link--btn" th:href="@{index}"
+              <a class="nav__link nav__link--btn" th:href="@{/index}"
                 >Log out</a>
             </li>
           </ul>
@@ -32,12 +32,12 @@
     <div class=grid-container>
         <div grid-item>
     <h1>Change Address</h1>
-    <form class="old_form" th:action ="@{edit}" th:object="${}" method="post">
+    <form class="old_form" th:action ="@{/edit}" th:object="${}" method="post">
     <label for="address">Current Address</label><br>
     <input type="text" name="address" th:field="*{address}">
     </form>
     
-    <form class="old_form" th:action ="@{edit}" th:object="${}" method="post">
+    <form class="old_form" th:action ="@{/edit}" th:object="${}" method="post">
         <label for="address">New Address</label><br>
         <input type="text" name="address" th:field="*{address}">
         <input type="button" name="button" value="Update">
@@ -45,12 +45,12 @@
     </div>
     <div grid-item>
         <h1>Change Email Address</h1>
-        <form class="old_form" th:action ="@{edit}" th:object="${}" method="post">
+        <form class="old_form" th:action ="@{/edit}" th:object="${}" method="post">
         <label for="Email">Current Email</label><br>
         <input type="text" name="emailAddress" th:field="*{eamilAddress}">
         </form>
         
-        <form class="old_form" th:action ="@{edit}" th:object="${}" method="post">
+        <form class="old_form" th:action ="@{/edit}" th:object="${}" method="post">
             <label for="address">New Email Address</label><br>
             <input type="email" name="email" ><br>
             <input type="text" name="emailAddress" th:field="*{eamilAddress}">
@@ -58,12 +58,12 @@
         </div>
         <div grid-item>
             <h1>Change Phone Number</h1>
-            <form class="old_form" th:action ="@{edit}" th:object="${}" method="post">
+            <form class="old_form" th:action ="@{/edit}" th:object="${}" method="post">
             <label for="phoneNumber">Current Phone Number</label><br>
             <input type="text" name="phone_number" th: field="*{phoneNumber}">
             </form>
             
-            <form class="old_form" th:action ="@{edit}" th:object="${}" method="post">
+            <form class="old_form" th:action ="@{/edit}" th:object="${}" method="post">
                 <label for="phoneNumber">New Phone Number</label><br>
                 <input type="text" name="phone_number" th: field="*{phoneNumber}">
                 <input type="button" name="button" value="Update">
