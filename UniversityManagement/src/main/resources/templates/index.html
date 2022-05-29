@@ -18,7 +18,7 @@
    
        
    <nav >
-     <img  alt="Future logo" src="img/logo.jpg"/>
+<!--     <img  alt="Future logo" src="img/logo.jpg"/>-->
      <div class="navigation">
      <ul>
 <!--         <li><a th:href="@{index}">Home</a></li>-->
@@ -42,8 +42,8 @@
          in obcaecati, excepturi perspiciatis maiores deserunt quisquam consectetur, accusantium eius veritatis, non aspernatur. Aperiam, magni odit.
     </p>
     <div class="btn">
-       <a class="blue" th: href="#">Check our Program</a>
-      <a class="yellow" th: href="#" >Admission </a>;
+       <a class="blue" href="#">Check our Program</a>
+      <a class="yellow" href="#" >Admission </a>;
     </div>
    
     </section>
@@ -82,7 +82,7 @@
       <div class="course-box">
 
         <div class="courses">
-          <img src="img/computerscience.jpg" alt="computer-course">
+          <img th:src="@{/img/computerscience.jpg}" alt="computer-course" >
           <div class="details">
             <span>Updated 05/05/22</span>
             <h6>Computer Science </h6>
@@ -101,7 +101,8 @@
         </div>
 
         <div class="courses">
-          <img src="img/accounting.jpg" alt="accounting">
+
+          <img  th:src="@{/img/accounting.jpg}" alt="accounting">
           <div class="details">
             <span>Updated 05/05/22</span>
             <h6>Comoputerized Accounting</h6>
@@ -120,7 +121,7 @@
         </div>
 
        <div class="courses">
-          <img src="img/bussiness.jpg" alt="bussiness-tech">
+          <img  th:src="@{/img/bussiness}"alt="bussiness-tech">
           <div class="details">
             <span>Updated 05/05/22</span>
             <h6>Bussiness Technology</h6>
@@ -138,7 +139,7 @@
              </div> 
             </div>
         <div class="courses">
-          <img src="img/hotelmanagement.jpg" alt="hotelmanagement">
+<!--          <img src="img/hotelmanagement.jpg" alt="hotelmanagement">-->
           <div class="details">
             <span>Updated 05/05/22</span>
             <h6>Hotel Management</h6>
@@ -157,7 +158,7 @@
         </div>
 
         <div class="courses">
-          <img src="img/cisco.jpg" alt="cisco">
+<!--          <img src="img/cisco.jpg" alt="cisco">-->
           <div class="details">
             <span>Updated 05/05/22</span>
             <h6>Cisco Networking</h6>
@@ -209,7 +210,7 @@
       </div> 
 
       <div class="btn">
-       <a class="yellow" th:href="@{/register}">Start Your Registration now!</a>
+<!--       <a class="yellow" th:href="@{/register}">Start Your Registration now!</a>-->
       </div>
 
   
@@ -222,7 +223,7 @@
       <div class="expert-box">
        
         <div class="profile">
-          <img src="img/1.jpg" alt="Jone Doe">
+<!--          <img src="img/1.jpg" alt="Jone Doe">-->
           <h6>John Doe</h6>
           <p>computer Science Expert</p>
           <div class="pro-links">
@@ -232,7 +233,7 @@
           </div>
         </div>
         <div class="profile">
-          <img src="img/2.jpg" alt="Tom Jonson">
+<!--          <img src="img/2.jpg" alt="Tom Jonson">-->
           <h6>Tom Jonson</h6>
           <p>Cisco Expert</p>
           <div class="pro-links">
@@ -242,7 +243,7 @@
           </div>
         </div>
         <div class="profile">
-          <img src="img/3.jpg" alt="Sara Wang">
+<!--          <img src="img/3.jpg" alt="Sara Wang">-->
           <h6>Sara Wang</h6>
           <p> Fashion Design Expert</p>
           <div class="pro-links">
@@ -252,7 +253,7 @@
           </div>
         </div>
         <div class="profile">
-          <img src="img/4.jpg" alt="Mary Smith">
+<!--          <img src="img/4.jpg" alt="Mary Smith">-->
           <h6>Mary Smith</h6>
           <p>Accounting Expert</p>
           <div class="pro-links">
