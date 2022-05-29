@@ -35,7 +35,7 @@ public class StudentController {
 
         model.addAttribute("students",students);
 
-        return "index";
+        return "studentsList";
     }
 
     @GetMapping("/addNewStudent")
