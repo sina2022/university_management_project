@@ -1,6 +1,7 @@
 package com.jac.assignment2.controller;
 
 import com.fasterxml.jackson.databind.*;
+import com.jac.assignment2.exception.RecordNotFoundException;
 import com.jac.assignment2.model.*;
 import com.jac.assignment2.service.*;
 import org.springframework.beans.factory.annotation.*;
@@ -42,7 +43,7 @@ public class CourseController {
     }
 
     @GetMapping("/addCourse/{id}")
-    public String addCourseToStudent(@PathVariable Long id ,Model model){
+    public String addCourseToStudent(@PathVariable Long id ,Model model) throws RecordNotFoundException {
         Student student=studentService.findStudentById(id);
        List<Course> courses=service.getAllCourses();
        Student newStudent=new Student();
@@ -54,7 +55,7 @@ public class CourseController {
     }
 
     @PostMapping("/saveCourseToStudent/{id}")
-    public String saveCourseToStudent(@ModelAttribute("newStudent") Student newStudent,Long id){
+    public String saveCourseToStudent(@ModelAttribute("newStudent") Student newStudent,Long id) throws RecordNotFoundException {
         Student dbStudent=studentService.findStudentById(id);
         Course course=newStudent.getCourses().stream().findFirst().get();
         dbStudent.getCourses().add(course);
@@ -65,7 +66,7 @@ public class CourseController {
     }
 
     @GetMapping("/addCourses/{id}")
-    public String addStudentToCourse(@PathVariable Long id ,Model model){
+    public String addStudentToCourse(@PathVariable Long id ,Model model) throws RecordNotFoundException {
         Student student=studentService.findStudentById(id);
         List<Course> coursesList=new ArrayList<>();
         Student newStudent=new Student();
@@ -78,7 +79,7 @@ public class CourseController {
 
     }
     @PostMapping("/saveCoursesToStudent/{id}")
-    public String saveCoursesToStudent(@ModelAttribute("coursesList") List<Course> coursesList,@PathVariable Long id){
+    public String saveCoursesToStudent(@ModelAttribute("coursesList") List<Course> coursesList,@PathVariable Long id) throws RecordNotFoundException {
         Student dbStudent=studentService.findStudentById(id);
         List<Course> courses= coursesList;
         for (Course course:courses){

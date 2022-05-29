@@ -1,5 +1,6 @@
 package com.jac.assignment2.controller;
 
+import com.jac.assignment2.exception.RecordNotFoundException;
 import com.jac.assignment2.model.*;
 import com.jac.assignment2.service.*;
 import org.springframework.beans.factory.annotation.*;
@@ -20,7 +21,7 @@ public class GradeController {
 
 
     @GetMapping("/courseGrades/{id}")
-    public String showcourseGrades(Model model, @PathVariable Long id){
+    public String showcourseGrades(Model model, @PathVariable Long id) throws RecordNotFoundException {
         Course course=courseService.findCourseById(id);
         List<Grade> grades=course.getGrades();
         model.addAttribute("course",course);
@@ -29,7 +30,7 @@ public class GradeController {
     }
 
     @GetMapping("/courseStudentsForProfessor/{id}")
-    public String showcourseStudentsForProfessor(Model model,@PathVariable Long id){
+    public String showcourseStudentsForProfessor(Model model,@PathVariable Long id) throws RecordNotFoundException {
         Course course=courseService.findCourseById(id);
         Set<Student> students=course.getStudents();
         Grade grade=new Grade();
@@ -40,7 +41,7 @@ public class GradeController {
         return "addGradesToCourse";
     }
     @PostMapping("/courseSt/grade/save/{id}")
-    public String saveGrade(@ModelAttribute("grade") Grade grade,@PathVariable Long id, RedirectAttributes redirectAttributes){
+    public String saveGrade(@ModelAttribute("grade") Grade grade,@PathVariable Long id, RedirectAttributes redirectAttributes) throws RecordNotFoundException {
         Student student=service.findStudentById(id);
         Course course=grade.getCourse();
         Grade savedGrade= gradeService.setGrade(student,course,grade);
