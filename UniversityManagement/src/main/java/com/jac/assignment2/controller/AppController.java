@@ -28,7 +28,7 @@ public class AppController {
 
 	@GetMapping("")
 	public String viewHomePage() {
-		return "homePage";
+		return "index";
 	}
 
 	@GetMapping("/register")
@@ -101,7 +101,7 @@ public class AppController {
 		List<User> listUsers = service.listAll();
 		model.addAttribute("listUsers", listUsers);
 
-		return "users";
+		return "administration";
 	}
 
 	@GetMapping(value = "/studentDashboard")

@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    font-family: "Rubik",sans-serif;
+    line-height: 1;
+    font-weight:400;
+    color:#555;
+  }
+
+  h1{
+    font-size:2.8rem;
+    font-weight:700;
+    color:rgb(35,35,35);
+    margin-bottom: 10px;
+  }
+  
+  span{
+    font-size:.9rem;
+    color:#757373
+  }
+
+  h6{
+    font-size:1.1rem;
+    color:rgb(24,24,49);
+  }
+
+
+  /* ************************************ */
+/* HEARDER */
+/* ************************************ */
+nav{
+  
+    width: 100%;
+    background-color: #fff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items:center;
+      padding:1vw 8vw;  
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  nav img {
+      width:100px;
+      
+      cursor:pointer;
+  }
+  nav .navigation ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    
+  }
+  nav .navigation ul li{
+   list-style:none;
+   margin-left:3rem
+  
+  }
+  nav .navigation ul li a{
+   text-decoration:none;
+   color:rgb(21,21,100);
+   font-size: 1.6rem;
+   font-weight: 500;
+   transition: 0.3s ease;
+   }
+   nav .navigation ul li a:hover{
+      color:#Fdc93b;
+    }
+
+/* ************************
+  /* Login section */
+  /**************************/
+ 
+ 
+  .login-section{
+    padding: 8vw 8vw 0 8vw;
+    
+}
+label{
+    color:#fff;
+}
+   
+  .form-container {
+      margin:0 auto;
+      max-width: 400px;
+      padding: 10px;
+      background-color: #101c32;
+    }
+    .form-container h1{
+        margin-bottom: 30px;
+        color:#fff;
+    }
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    /* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  .form-container select{
+      margin-bottom: 20px;
+      height:20%;
+      background: #fff;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #fdc93b;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+
+  .form-container .cancel {
+    background-color: red;
+    
+  }
+  button{
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+ 
+
+/* 
+  /* ************************
+  /* FOOTER */
+  /**************************/
+  
+  footer {
+    margin-top: 30px;
+    padding: 4vw;
+    background-color:#101c32;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap:wrap;
+  
+  }
+  .footer-col{
+    padding-bottom: 40px;
+  }
+  .footer-col h3{
+    color:rgb(241,240,245);
+    font-weight: 600;
+    padding-bottom: 20px ;
+
+  }
+  .footer-col li{
+    list-style: none;
+    color:#7b838a;
+    padding:10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    }
+
+  .footer-col li:hover{
+    color:rgb(241,240,245);
+  
+  }
+  .footer-col p{
+    color:#7b838a;
+  }
+  .subscribe{
+    margin-top:20px;
+  }
+
+  .footer-col input{
+    width:220px;
+    padding: 15px 12px;
+    background-color: #334f6c;
+    border: none;
+    outline:none;
+    color:#fff;
+  }
+   .footer-col a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding:12px 15px;
+    background-color: #fff;
+    font-weight: 600;
+  
+  }
+  .footer-col .yellow{
+      margin-left: 2rem;
+      color:#fff;
+      background: #fdc93b;
+      transition:0.3s ease;
+      
+    }
+  .footer-col .yellow:hover{
+      color:rgb(21,21,100);
+      background: #fff;
+      
+    }
+    .copyright{
+      margin-top:20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width:100%;
+      flex-wrap:wrap;
+
+    }
+    .copyright p{
+     color: #fff;
+
+    }
+    .copyright .pro-links{
+      margin-top:0px;
+    }
+    .copyright .pro-links i {
+      background-color: #5f7185;
+      color:#fff;
+    }
+    .copyright .pro-links i:hover {
+      background-color: #Fdc93b;
+      color:#2c2c2c;
+    }
+   

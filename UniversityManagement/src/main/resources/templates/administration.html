@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}"  />
+   
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+          <div>
+              <img class="pt-2"
+                  src="img/logo.jpg"
+                  alt="school logo"
+              />
+              
+          </div>
+          
+          <ul class="nav__links">
+            <li class="nav__item">
+              <a class="nav__link" th:href="@{/index}">Home</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link--btn" th:href="@{index}"
+                >Log out</a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+
+      <section class="admin">
+        <h1>List of users</h1>
+          <div class="table">
+<!--            <form th:action="@{/admin}" th:object="${admin}" method="post" id="my_form"></form>-->
+          <table>
+              <thead>
+              <tr>
+                  <th>UserId</th>
+                  <th>Email</th>
+                  <th>Roles</th>
+                  <th>action</th>
+                     
+              </tr>
+           </thead>
+           <tbody>
+                           <tr th:each="user: ${listUsers}">
+                               <td th:text="${user.id}">User ID</td>
+                               <td th:text="${user.email}">E-mail</td>
+                               <td th:text="${user.roles}">Roles</td>
+                               <td><a th:href="@{'/users/edit/' + ${user.id}}" type="button">Edit</a></td>
+<!--              <tr th:each="admin : ${admins}">-->
+<!--               <td th:text="${admin.id}"></td>-->
+<!--               <td th:text="${admin.email}">sinaKooshesh@gmaile.com</td>-->
+<!--               <td th:text="${role}">admin</td> -->
+<!--               <td ><button th:href="@{'/users/edit/' + ${user.id}}" type="button" form="my_form">Edit</button></td>-->
+              </tr>
+           </tbody>
+          </table>
+         </div>
+    </section>
+        <div>
+<!--            <table class="table table-striped table-bordered">-->
+<!--                <thead class="thead-dark">-->
+<!--                <tr>-->
+<!--                    <th>User ID</th>-->
+<!--                    <th>E-mail</th>-->
+<!--                    <th>Roles</th>-->
+<!--                    <th> action</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr th:each="user: ${listUsers}">-->
+<!--                    <td th:text="${user.id}">User ID</td>-->
+<!--                    <td th:text="${user.email}">E-mail</td>-->
+<!--                    <td th:text="${user.roles}">Roles</td>-->
+<!--                    <td><a th:href="@{'/users/edit/' + ${user.id}}">Edit</a></td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+            <br>
+            <a th:href="@{/students}" class="btn btn-primary btn-sm mb-3">list of students</a>
+            <a th:href="@{/programs}" class="btn btn-primary btn-sm mb-3">List of program</a>
+            <a th:href="@{/course}" class="btn btn-primary btn-sm mb-3">list of courses</a>
+            <a th:href="@{/showProfessorList}" class="btn btn-primary btn-sm mb-3">list of professors</a>
+
+            <!--		<a th:href="@{/students}" class="btn btn-primary btn-sm mb-3">list of students</a>-->
+        </div>
+         </main>
+
+         <footer class="footer-section">
+            <div class="footer-col">
+              <h3>Top Products</h3>
+              <li>Manage Reputation</li>
+              <li>Power Tools</li>
+              <li>Managed Websites</li>
+              <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <li>Jobs</li>
+              <li>Brand Assets</li>
+              <li>Investor Relations</li>
+              <li>Terms of Serivce</li>
+            </div>
+            <div class="footer-col">
+              <h3>Features</h3>
+              <li>Manage Reputation</li>
+              <li>Power Tools</li>
+              <li>Managed Websites</li>
+              <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+              <h3>Resources</h3>
+              <li>Research</li>
+              <li>Experts</li>
+              <li>Marketing Service</li>
+            </div>
+            <div class="footer-col">
+              <h3>Newsletter</h3>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+        
+             <div class="subscribe"></div>
+             <input type="text" placeholder="Your Email address">
+             <a href="#" class="yellow">SUBSCRIBE</a>
+            </div>
+            <div class="copyright">
+              <p>Copyright @2022 ALL rights reserved by school</p>
+              <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+            </div>
+        
+            </footer>
+        
+      
+    
+</body>
+</html>
