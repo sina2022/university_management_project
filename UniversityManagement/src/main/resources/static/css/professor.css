@@ -270,7 +270,7 @@ td button{
  cursor: pointer;
  transition: all 0.3s;
 }
-input[type=number],select{
+input[type=hidden],select{
  width: 12%;
  padding: 10px 10px;
  margin: 8px 0;
@@ -308,6 +308,17 @@ label{
 select{
     width:200px;
 }
+
+/* ************************
+  /* list-section */
+  /**************************/
+.container{
+  margin-bottom:30px;
+}
+  .list-section{
+    margin:0 auto;
+
+  }
 /* ************************
   /* FOOTER */
   /**************************/

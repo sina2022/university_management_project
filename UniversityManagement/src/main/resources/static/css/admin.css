@@ -222,6 +222,14 @@
     font-size:1.5rem;
     padding-top: 1rem;
 }
+/* ************************
+  /* list-section */
+  /**************************/
+ 
+    .list-section{
+      margin:0 auto;
+  
+    }
 
 /* ************************
   /* grade-course section */
