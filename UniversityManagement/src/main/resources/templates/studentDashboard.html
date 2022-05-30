@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>home</title>
-    <!-- <link rel="stylesheet"
+     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous"> -->
-          <link rel="stylesheet" th:href="@{/css/professor.css}"  />    
+          crossorigin="anonymous"> 
+          <link rel="stylesheet" th:href="@{/css/form.css}"  />    
 </head>
 <body>
     <header class="header">
@@ -31,15 +31,15 @@
           </ul>
         </nav>
     </header>
-    <section>
+    <section class="form-section">
 <div class="container my-2">
-    <h2 >Student dashboard</h2>
+    <h3 >Student dashboard</h3>
     <br>
     <h2>
         welcome back <span th:text="${student.FName}"/>,<span th:text="${student.LName}"/>
     </h2>
-    <table >
-        <thead>
+    <table style="width:100%" class="table  table-bordered table-striped  ">
+        <thead class="thead-info">
         <tr>
             <th th:width=".1"> </th>
             <th>First Name</th>
@@ -60,9 +60,9 @@
         </tr>
     </table>
     <br>
-    <h2>your courses</h2>
-    <table>
-    <thead>
+    <h3>your courses</h3>
+    <table style="width:100%" class="table  table-bordered table-striped  ">
+    <thead  class="thead-info">
     <th>course name</th>
     <th>teacher </th>
     </thead>
@@ -73,8 +73,8 @@
     </table>
 
 <h2>your grades</h2>
-    <table>
-        <thead>
+    <table style="width:100%" class="table  table-bordered table-striped  ">
+        <thead  class="thead-info">
         <th>course name</th>
         <th>Grade </th>
         </thead>
