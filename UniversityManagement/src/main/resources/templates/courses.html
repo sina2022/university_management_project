@@ -15,24 +15,29 @@
     
     <title>Course page</title>
     
-</head>
-<body>
-   
-       
-   <nav >
-     <img  alt="Future logo" th:src="@{/images/logo.jpg}"/>
-     <div class="navigation">
-     <ul>
-      <li><a th:href="@{/}">Home</a></li>
-      <li><a th:href="@{/}">Our programs</a></li>
-      <li><a href="#signup">Admission</a></li>
-      <li><a th:href="{@/login}">Login</a></li>
-           
-     </ul>
-     </div>  
-   </nav>
-</header>
 
+<body>
+<header class="header">
+    <nav class="nav">
+        <div>
+            <img class="pt-2"
+                 th:src="@{/images/logo.jpg}"
+                 alt="school logo"
+            />
+
+        </div>
+
+        <ul class="nav__links">
+            <li class="nav__item">
+                <a class="nav__link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--btn" th:href="@{/}"
+                >Log out</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <main>
 
       <section class="section-course">
