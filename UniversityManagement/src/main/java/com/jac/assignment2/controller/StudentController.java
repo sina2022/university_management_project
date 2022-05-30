@@ -106,7 +106,7 @@ public class StudentController {
         program.addStudent(student);
         service.saveStudent(student);
         programService.saveProgram(program);
-        return "users";
+        return "redirect:/students";
     }
 
     @GetMapping("/show/{id}")
@@ -137,7 +137,7 @@ public class StudentController {
     public String deleteThroughId(@PathVariable(value = "id") long id){
 
         service.deleteStudent(id);
-        return "users";
+        return "redirect:/students";
     }
     @GetMapping("/showFormForUpdate/{id}")
     public String updateForm(@PathVariable(value = "id") long id, Model model) throws RecordNotFoundException {

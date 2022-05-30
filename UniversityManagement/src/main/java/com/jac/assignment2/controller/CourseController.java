@@ -62,7 +62,7 @@ public class CourseController {
         course.getStudents().add(dbStudent);
       studentService.saveStudent(dbStudent);
       //Set<Course> courses= student.getCourses();
-        return "users";
+       return "redirect:/students";
     }
 
     @GetMapping("/addCourses/{id}")
@@ -89,7 +89,7 @@ public class CourseController {
 //        course.getStudents().add(dbStudent);
         studentService.saveStudent(dbStudent);
         //Set<Course> courses= student.getCourses();
-        return "users";
+        return "redirect:/students";
     }
 
 }
