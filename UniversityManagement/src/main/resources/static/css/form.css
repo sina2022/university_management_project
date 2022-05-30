@@ -24,6 +24,12 @@
     background-color: #fff;
     
   }
+.none{
+    display:none;
+}
+.btn{
+    width:50px;
+}
   
   /* GENERAL ELEMENTS */
 
