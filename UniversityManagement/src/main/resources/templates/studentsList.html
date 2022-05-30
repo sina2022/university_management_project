@@ -39,7 +39,7 @@
     <table style="width:100%" class="table  table-bordered table-striped  ">
         <thead >
         <tr>
-          
+            <th></th>
             <th> First Name</th>
             <th>Last Name</th>
             <th>email</th>
@@ -51,9 +51,8 @@
         </tr>
         </thead>
         <tr th:each="st:${students}">
-            <div class="none">
+    
             <td th:type="hidden" th:filed="${st.id}"></td>
-            </div>
             <td th:text="${st.FName}"></td>
             <td th:text="${st.LName}"></td>
             <td th:text="${st.email}"></td>
