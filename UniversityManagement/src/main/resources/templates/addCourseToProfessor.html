@@ -18,6 +18,7 @@
         <input type="hidden" th:field="${professor.email}" th:value="${professor.email}">
         <input type="hidden" th:field="${professor.gender}" th:value="${professor.gender}">
         <input type="hidden" th:field="${professor.address}" th:value="${professor.address}">
+        <input type="hidden" th:field="${professor.phone}" th:value="${professor.address}">
 
         <select th:field="${newProfessor.courses}">
             <option  th:each="course:${courses}"  th:value="${course.id}" th:text="${course.courseName}">
