@@ -53,13 +53,19 @@
             <option th:each="gender : ${T(com.jac.assignment2.model.Gender).values()}"
                     th:value="${gender}" th:text="${gender.toString().toLowerCase()}"></option>
         </select>
+        <h4>address</h4>
+        <input type="text" th:field="*{address.buildingNumber}"
+               placeholder="Enter buildingNumber" class="form-control mb-4 col-4"/>
 
-        <label>Showing all the server errors</label>
-        <ul>
-            <li th:each="err :${#fields.errors()}" th:text="${err}" class="error"></li>
-        </ul>
+        <input type="text" th:field="*{address.street}"
+               placeholder="Enter street" class="form-control mb-4 col-4"/>
 
+        <input type="text" th:field="*{address.city}"
+               placeholder="Enter city" class="form-control mb-4 col-4"/>
 
+        <input type="text" th:field="*{address.zipCode}"
+               placeholder="Enter zipCode" class="form-control mb-4 col-4"/>
+        <p th:if="${#fields.hasErrors('address')}" th:errorclass="error" th:errors="*{address}"></p>
 
 
         <button type="submit" class="btn btn-info col-2">Save student</button>
