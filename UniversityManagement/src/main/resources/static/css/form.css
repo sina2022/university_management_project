@@ -30,6 +30,12 @@
      cursor: pointer;
     
 }
+table{
+    width:1200px;
+}
+.none{
+    display:none;
+}
   
   /* GENERAL ELEMENTS */
 
@@ -74,6 +80,9 @@
     transition: filter 0.5s;
     width:100px;
   }
+.action{
+    width:160px;
+}
   
   /* NAVIGATION */
   .nav {
@@ -179,6 +188,7 @@
   font-size: 16px;
   font-weight: 500;
   text-align: center;
+    
   
 }
 
@@ -186,17 +196,17 @@
 th{
  background-color:#399bb3;
  color:#fff;
- width: 20%;
+ text-align: center; 
+ font-size: 18px;
 }
-th,
+
 td{
- font-size: 12px;
- padding:16px 24px;
- text-align: center;
- 
+font-size: 16px;
 }
-.add-button{
+
+.add-button .btn{
     margin-left:25px;
+    width:300px;
 
 }
  

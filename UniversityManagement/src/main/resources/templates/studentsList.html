@@ -39,15 +39,16 @@
     <table style="width:100%" class="table  table-bordered table-striped  ">
         <thead >
         <tr>
-            <th></th>
-            <th> First Name</th>
-            <th>Last Name</th>
+            <th class="none"></th>
+            <th class="action"> First Name</th>
+            <th class="action">Last Name</th>
             <th>email</th>
             <th>gender</th>
+            <th>PhoneNumber</th>
             <th>Address</th>
             <th>Program</th>
             <th>courses</th>
-            <th>Action</th>
+            <th class="action">Action</th>
         </tr>
         </thead>
         <tr th:each="st:${students}">
@@ -57,6 +58,7 @@
             <td th:text="${st.LName}"></td>
             <td th:text="${st.email}"></td>
             <td th:text="${st.gender}"></td>
+            <td th:text="${st.phoneNumber}"></td>
             <td th:text="${st.address}"></td>
             <td th:text="${st.program}"></td>
             <td >
@@ -65,7 +67,7 @@
                 </ul>
             </td>
 
-            <td>
+            <td >
                 <a th:href="@{/showFormForUpdate/{id}(id=${st.id})}" class="btn btn-primary">Update</a>
                 <a th:href="@{/addCourse/{id}(id=${st.id})}" class="btn btn-danger">add course</a>
                 <a th:href="@{/addProgram/{id}(id=${st.id})}" class="btn btn-primary">add program</a>
