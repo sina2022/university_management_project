@@ -6,8 +6,7 @@
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
-          <!-- <link rel="stylesheet" th:href="@{/css/professor.css}"  /> -->
+          crossorigin="anonymous">        
           <link rel="stylesheet" th:href="@{/css/form.css}"  />
 </head>
 <body>
@@ -33,12 +32,12 @@
     </nav>
 </header>
 
-    <section>
+    <section class="form-section">
      <span th:text="${program.programName}"></span>
-<table style="width:100%" class="table  table-bordered table-dark  ">
+<table style="width:100%" class="table  table-bordered table-striped  ">
     <thead>
     <tr>
-        <th> </th>
+        <th th:width=".1"> </th>
         <th>First Name</th>
         <th>Last Name</th>
         <th> Email</th>
@@ -55,8 +54,8 @@
 
     </tr>
 </table>
-</section>
-<section class="list-section">
+<br>
+
      <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
      <a th:href="@{/programs}" class="btn btn-primary btn-sm mb-3">go back to program list</a>
 </section>
