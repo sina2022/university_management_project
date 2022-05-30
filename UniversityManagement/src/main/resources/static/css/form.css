@@ -179,15 +179,15 @@
   table{
     width:100%;
     margin-top: 2.5rem;
-    margin-left:5rem;
-    border-collapse: collapse;
+    
+    
     margin-bottom: 10rem;
     
 }
 th{
  background-color:#399bb3;
  color:#fff;
- height: 20%;
+ width: 20%;
 }
 th,
 td{
@@ -196,8 +196,10 @@ td{
  text-align: center;
  
 }
+.add-button{
+    margin-left:25px;
 
-
+}
  
 /* 
   table{
