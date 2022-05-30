@@ -31,7 +31,8 @@
         </ul>
     </nav>
 </header>
-<h4> select your course</h4>
+    <section class="form-section">
+<h3> Select your course</h3>
 <form th:action="@{/saveCourseToProfessor/{id}(id=${professor.id})}" th:object="${newProfessor}" method="post">
     <ul class="mb-4 col-2" >
         <input type="hidden" th:field="${professor.id}" th:value="${professor.id}">
@@ -48,8 +49,10 @@
         </select>
 
     </ul>
+    <br>
     <button type="submit" class="btn btn-info col-2">Save Course</button>
 </form>
+    </section>
 
 <footer class="footer-section">
     <div class="footer-col">
