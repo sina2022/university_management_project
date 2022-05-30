@@ -201,7 +201,7 @@ td{
  
 /* 
   table{
-    width:80%;
+    width:100%;
     margin-top: 2.5rem;
     margin-left:5rem;
     border-collapse: collapse;
@@ -218,7 +218,7 @@ td{
 th{
  background-color:#399bb3;
  color:#fff;
- width: 20%;
+
 }
 tbody tr:nth-child(odd){
  background-color: #f8f9fa;
