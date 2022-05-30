@@ -31,7 +31,7 @@
     
 }
 table{
-    width:1000px;
+    width:1200px;
 }
   
   /* GENERAL ELEMENTS */
@@ -77,6 +77,9 @@ table{
     transition: filter 0.5s;
     width:100px;
   }
+.action{
+    width:160px;
+}
   
   /* NAVIGATION */
   .nav {
@@ -200,7 +203,7 @@ font-size: 16px;
 
 .add-button .btn{
     margin-left:25px;
-    width:500px;
+    width:300px;
 
 }
  
