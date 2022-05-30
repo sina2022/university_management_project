@@ -31,8 +31,8 @@
         </ul>
     </nav>
 </header>
-    <section>
-<h4> select your course</h4>
+    <section class="form-section">
+<h3> select your course</h3>
 <!--/*@thymesVar id="coursesList" type="java.util.List"*/-->
 <form th:action="@{/saveCoursesToStudent/{id}(id=${student.id})}" th:object="${newStudent}" method="post">
 
