@@ -15,7 +15,7 @@
         <nav class="nav">
           <div>
               <img class="pt-2"
-                  th:src="@{/imges/logo.jpg}"
+                  th:src="@{/images/logo.jpg}"
                   alt="school logo"
               />
               
@@ -33,15 +33,16 @@
         </nav>
     </header>
     <section>
-     <span th:text="${course.courseName}"></span>
-<table style="width:100%" class="table  table-bordered table-dark  ">
+        <div class="container my-2">
+    <h2 > <span th:text="${course.courseName}"></span> </h2>
+
+        <table style="width:100%" class="table  table-bordered table-striped  " >
     <thead>
     <tr>
-        <th> </th>
         <th>first Name</th>
         <th>last Name</th>
+        <th>Email</th>
         <th>grade</th>
-        <th>course</th>
         <th>Action</th>
     </tr>
     </thead>
@@ -49,13 +50,15 @@
     <tr th:each="gr:${grades}">
         <td th:text="${gr.student.FName}"></td>
         <td th:text="${gr.student.LName}"></td>
+        <td th:text="${gr.student.email}"></td>
         <td th:text="${gr.grade}"></td>
-        <td th:text="${gr.course.courseName}"></td>
         <td>
 <!--        <a th:href="@{/editGradeOfStudent/{id}(id=${gr.id})}" class="btn btn-primary">edit grades</a>-->
                 <a th:href="@{/editGradeOfStudent/(courseId=${course.id},id=${gr.id})}" class="btn btn-primary">edit grades</a>
     </tr>
 </table>
+            <a th:href="@{/editGradeOfStudent/(courseId=${course.id},id=${gr.id})}" class="btn btn-primary">go back to dashboard</a>
+        </div>
 </section>
 <footer class="footer-section">
     <div class="footer-col">

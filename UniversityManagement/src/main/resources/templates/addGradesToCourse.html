@@ -14,7 +14,7 @@
         <nav class="nav">
           <div>
               <img class="pt-2"
-                  th:src="@{/imges/logo.jpg}"
+                  th:src="@{/images/logo.jpg}"
                   alt="school logo"
               />
               
@@ -31,26 +31,26 @@
           </ul>
         </nav>
     </header>
-    <section></section>
-     <span th:text="${course.courseName}"></span>
-<table style="width:100%" class="table  table-bordered table-dark  ">
+    <section class="form-section">
+
+    <div class="container my-2">
+        <h2 > <span th:text="${course.courseName}"></span> </h2>
+
+        <table style="width:100%" class="table  table-bordered table-striped  " >
     <thead>
     <tr>
         <th> </th>
         <th> Name</th>
         <th>Family </th>
-        <th>students</th>
+        <th>Program</th>
         <th>grade</th>
-
-        <!--            <th>Address</th>-->
-
         <th>Action</th>
     </tr>
     </thead>
 
     <tr th:each="st:${students}">
         <form th:action="@{/courseSt/grade/save/{id}(id=${st.id})}"  th:object="${Grade}" method="post">
-<!--        <td th:type="hidden" th:filed="${st.id}"></td>-->
+        <td th:type="hidden" th:filed="${st.id}"></td>
         <td th:text="${st.FName}"></td>
         <td th:text="${st.LName}"></td>
         <td th:text="${st.program}"></td>
@@ -61,12 +61,13 @@
              <input type="hidden" th:filed="*{student}"  th:value="${st}">
         <td>
 
-            <button type="submit" class="btn btn-info col-2">Save student</button>
+            <button type="submit" class="btn btn-primary btn-sm mb-3 p-3">Save grade</button>
 
         </td>
         </form>
     </tr>
 </table>
+    </div>
 </section>
 <footer class="footer-section">
     <div class="footer-col">
