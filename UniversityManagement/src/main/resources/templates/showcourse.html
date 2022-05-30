@@ -7,10 +7,10 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
-          <!-- <link rel="stylesheet" th:href="@{/css/professor.css}"  /> -->
           <link rel="stylesheet" th:href="@{/css/form.css}"  />
 </head>
-<header class="header">
+<body>
+    <header class="header">
     <nav class="nav">
         <div>
             <img class="pt-2"
@@ -32,14 +32,12 @@
     </nav>
 </header>
 
-   
-<body>
-    <section>
+    <section class="form-section">
     <h1><span th:text="${course.courseName}"></span></h1>
-<table style="width:100%" class="table  table-bordered table-dark  ">
+<table style="width:100%" class="table  table-bordered table-striped  ">
     <thead>
     <tr>
-        <th> </th>
+        <th th:width=".1"> </th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -57,11 +55,13 @@
         </td>
     </tr>
 </table>
-</section>
-<section class="list-section">
+
+<br>
     <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
     <a th:href="@{/course}" class="btn btn-primary btn-sm mb-3">go back to Course list</a>
+       
 </section>
+    
 <footer class="footer-section">
     <div class="footer-col">
       <h3>Top Products</h3>
