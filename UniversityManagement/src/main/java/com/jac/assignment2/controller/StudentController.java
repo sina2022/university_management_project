@@ -139,5 +139,13 @@ public class StudentController {
         service.deleteStudent(id);
         return "users";
     }
+    @GetMapping("/showFormForUpdate/{id}")
+    public String updateForm(@PathVariable(value = "id") long id, Model model) throws RecordNotFoundException {
+        Student studentdb = service.findStudentById(id);
+        model.addAttribute("student", studentdb);
+        return "studentUpdate";
+    }
+
+
 
 }

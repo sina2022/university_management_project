@@ -57,7 +57,12 @@ public class ProfessorController {
 
         return "redirect:/showProfessorList";
     }
-
+    @GetMapping("/showFormForUpdateprofessor/{id}")
+    public String updateForm(@PathVariable(value = "id") long id, Model model) throws RecordNotFoundException {
+        Professor professordb = service.findProfessorById(id);
+        model.addAttribute("professor", professordb);
+        return "updateProfessor";
+    }
 
     @GetMapping("/addCourseToProfessor/{id}")
     public String addCourseToProfessor(@PathVariable Long id ,Model model) throws RecordNotFoundException {
