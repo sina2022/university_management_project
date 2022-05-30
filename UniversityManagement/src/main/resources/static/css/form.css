@@ -26,9 +26,12 @@
   }
 
 .btn{
-    width:90px;
+    width:100px;
      cursor: pointer;
     
+}
+table{
+    width:1000px;
 }
   
   /* GENERAL ELEMENTS */
@@ -196,7 +199,7 @@ font-size: 12px;
 }
 .add-button{
     margin-left:25px;
-    width:100px;
+    width:200px;
 
 }
  
