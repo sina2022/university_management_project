@@ -33,7 +33,7 @@ public class Student {
     private String lName;
 
     private String phone;
-
+                                        
     @Enumerated(EnumType.STRING)
     @Column(length = 10)
     private Gender gender;
