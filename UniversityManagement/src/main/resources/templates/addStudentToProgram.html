@@ -42,9 +42,9 @@
     <input type="hidden" th:field="${student.address}" th:value="${student.address}">
      <input type="hidden" th:field="${student.email}" th:value="${student.email}">
      <input type="hidden" th:field="${student.address}" th:value="${student.address}">
-    <input type="hidden" th:field="${student.courses}" th:value="${student.program}">
-    <input type="hidden" th:field="${student.phone}" th:value="${student.program}">
-    <input type="hidden" th:field="${student.grades}" th:value="${student.program}">
+    <input type="hidden" th:field="${student.courses}" th:value="${student.courses}">
+    <input type="hidden" th:field="${student.phone}" th:value="${student.phone}">
+    <input type="hidden" th:field="${student.grades}" th:value="${student.grades}">
     <select th:field="${student.program}">
             <option  th:each="program:${programs}"  th:value="${program.id}" th:text="${program.programName}">
 <!--            <label th:text="${program.getProgramName}"></label>-->
