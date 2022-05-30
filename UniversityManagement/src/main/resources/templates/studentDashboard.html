@@ -46,6 +46,7 @@
             <th>email</th>
             <th>Address</th>
             <th>Program</th>
+            <th>Phone Number</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -56,6 +57,11 @@
             <td th:text="${student.email}"></td>
             <td th:text="${student.address}"></td>
             <td th:text="${student.program}"></td>
+            <td th:text="${student.phone}"></td>
+            <td >
+                <a th:href="@{/showFormForUpdateStudent/{id}(id=${student.id})}" class="btn btn-primary">Update</a>
+            </td>
+
         </tr>
     </table>
     <br>
