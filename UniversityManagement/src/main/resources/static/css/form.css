@@ -26,7 +26,7 @@
   }
 
 .btn{
-    width:110px;
+    width:90px;
      cursor: pointer;
     
 }
@@ -191,15 +191,16 @@ th{
  background-color:#399bb3;
  color:#fff;
  text-align: center; 
- font-size: 12px;
+ font-size: 18px;
 }
 
 td{
-font-size: 12px;
+font-size: 16px;
 }
-.add-button{
+
+.add-button btn{
     margin-left:25px;
-    width:300px;
+    width:500px;
 
 }
  
