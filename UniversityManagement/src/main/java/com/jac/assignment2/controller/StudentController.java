@@ -146,6 +146,21 @@ public class StudentController {
         return "studentUpdate";
     }
 
+    @GetMapping("/showFormForUpdateStudent/{id}")
+    public String updateFormStudent(@PathVariable(value = "id") long id, Model model) throws RecordNotFoundException {
+        Student studentdb = service.findStudentById(id);
+        model.addAttribute("student", studentdb);
+        return "studentUpdateFromStudent";
+    }
+    @PostMapping("/saveStudentFromStudentDashboard")
+    public String saveStudentFromStudentDashboard(@Valid @ModelAttribute("student") Student saveStudent, BindingResult result,Model model){
+        if (result.hasErrors()){
+            return "newStudent";
+        }
+        service.saveStudent(saveStudent);
+        model.addAttribute("student",saveStudent);
 
+        return "studentDashboard";
+    }
 
 }

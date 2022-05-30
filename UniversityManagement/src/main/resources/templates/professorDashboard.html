@@ -39,17 +39,15 @@
     <h2>
         welcome back <span th:text="${professor.FName}"></span> <span th:text="${professor.LName}"></span>
     </h2>
-    <table>
+    <table  style="width:100%" class="table  table-bordered table-striped  ">
         <thead>
         <tr>
             <th th:width=".1"> </th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>email</th>
-            <th>gender</th>
             <th>Address</th>
-            <th>Program</th>
-            <th>courses</th>
+            <th>phone number</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -59,11 +57,15 @@
             <td th:text="${professor.LName}"></td>
             <td th:text="${professor.email}"></td>
             <td th:text="${professor.address}"></td>
+            <td th:text="${professor.phone}"></td>
+            <td >
+                <a th:href="@{/showFormForUpdateprofessorFromProfessor/{id}(id=${professor.id})}" class="btn btn-primary">Update</a>
+            </td>
         </tr>
     </table>
     <br>
     <h2>your courses</h2>
-            <table>
+            <table style="width:100%" class="table  table-bordered table-striped  ">
                 <thead>
                 <tr>
                     <th>course name</th>
@@ -73,8 +75,8 @@
                 <tr th:each="cr:${professor.courses}">
                     <td th:text="${cr.courseName}"></td>
                     <td >
-                        <a th:href="@{/courseGrades/{id}(id=${cr.id})}" class="btn btn-primary">see all the student in this course</a>
-                        <a th:href="@{/courseStudentsForProfessor/{id}(id=${cr.id})}" class="btn btn-primary">add grades to students</a>
+                        <a th:href="@{/courseGrades/{id}(id=${cr.id})}" class="btn btn-primary p-2 m-3">see all the student in this course</a>
+                        <a th:href="@{/courseStudentsForProfessor/{id}(id=${cr.id})}" class="btn btn-primary p-2 m-3">add grades to students</a>
                     </td>
                 </tr>
 
