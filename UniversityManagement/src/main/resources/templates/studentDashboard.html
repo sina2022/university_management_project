@@ -22,10 +22,10 @@
           
           <ul class="nav__links">
             <li class="nav__item">
-              <a class="nav__link" th:href="@{/index}">Home</a>
+              <a class="nav__link" th:href="@{/}">Home</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link nav__link--btn" th:href="@{/index}"
+              <a class="nav__link nav__link--btn" th:href="@{/}"
                 >Log out</a>
             </li>
           </ul>
@@ -33,19 +33,20 @@
     </header>
     <section>
 <div class="container my-2">
-    <h3>Student dashboard</h3>
-
-    <table style="width:100%" class="table  table-bordered table-dark  ">
+    <h2 >Student dashboard</h2>
+    <br>
+    <h2>
+        welcome back <span th:text="${student.FName}"/>,<span th:text="${student.LName}"/>
+    </h2>
+    <table >
         <thead>
         <tr>
-            <th> </th>
-            <th> First Name</th>
+            <th th:width=".1"> </th>
+            <th>First Name</th>
             <th>Last Name</th>
             <th>email</th>
-            <th>gender</th>
             <th>Address</th>
             <th>Program</th>
-            <th>courses</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -54,23 +55,34 @@
             <td th:text="${student.FName}"></td>
             <td th:text="${student.LName}"></td>
             <td th:text="${student.email}"></td>
-            <td th:text="${student.gender}"></td>
             <td th:text="${student.address}"></td>
             <td th:text="${student.program}"></td>
-            <td >
-                <ul th:each="cr:${student.courses}" >
-                    <li th:text=" ${cr}"></li>
-                </ul>
-            </td>
-            <td >
-                <ul th:each="gr:${student.grades}" >
-                    <li th:text=" ${cr}"></li>
-                </ul>
-            </td>
-<
         </tr>
     </table>
-   
+    <br>
+    <h2>your courses</h2>
+    <table>
+    <thead>
+    <th>course name</th>
+    <th>teacher </th>
+    </thead>
+    <tr th:each="cr:${student.courses}">
+        <td th:text="${cr.courseName}">  </td>
+        <td><span th:text=" ${cr.professors[0].FName}"/>.<span th:text=" ${cr.professors[0].LName}"/></td>
+    </tr>
+    </table>
+
+<h2>your grades</h2>
+    <table>
+        <thead>
+        <th>course name</th>
+        <th>Grade </th>
+        </thead>
+        <tr th:each="gr:${student.grades}" >
+        <td th:text="${gr.course}">  </td>
+         <td th:text=" ${gr.grade}"> </td>
+        </tr>
+    </table>
 
 </div>
 </section>

@@ -18,8 +18,8 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int buildingNumber;
-    private String Street;
-    private String City;
+    private String street;
+    private String city;
     private String zipCode;
 
     @OneToOne(mappedBy = "address")
@@ -39,6 +39,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return "zipCode= " + zipCode;
+        return "number "+buildingNumber+","+street+","+city+","+"zip code:"+zipCode;
     }
 }
