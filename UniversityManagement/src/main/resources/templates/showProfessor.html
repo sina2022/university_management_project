@@ -15,7 +15,7 @@
         <nav class="nav">
           <div>
               <img class="pt-2"
-                  th:src="@{/imges/logo.jpg}"
+                  th:src="@{/images/logo.jpg}"
                   alt="school logo"
               />
               
@@ -34,9 +34,9 @@
     </header>
     <section>
 <div class="container my-2">
-    <h3>Professor List</h3>
+    <h2>Professor List</h2>
 
-    <table style="width:100%" class="table  table-bordered table-dark  ">
+    <table style="width:100%" class="table  table-bordered table-dark table-striped  ">
         <thead>
         <tr>
             <th> </th>
@@ -44,7 +44,7 @@
             <th>Last Name</th>
             <th>email</th>
             <th>Address</th>
-            <th>courses</th>
+            <th >courses</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -59,24 +59,24 @@
                     <li th:text=" ${cr}"></li>
                 </ul>
             </td>
-<!--            <td  th:each="cor:${prof.getCourses()}" ><span th:text=" ${cor}" ></span> </td>-->
+
 
             <td>
                 <a th:href="@{/showFormForUpdateprofessor/{id}(id=${prof.id})}" class="btn btn-primary">Update</a>
                 <a th:href="@{/addCourseToProfessor/{id}(id=${prof.id})}" class="btn btn-danger">add course</a>
-                <a th:href="@{/addProfAddress/{id}(id=${prof.id})}" class="btn btn-primary">add address</a>
                 <a th:href="@{/deleteProfessor/{id}(id=${prof.id})}" class="btn btn-danger">Delete</a>
-<!--                <a th:href="@{/addProgram/{id}(id=${st.id})}" class="btn btn-primary">add program</a>-->
+
             </td>
         </tr>
     </table>
 </div>
 </section>
-
+    <div class="container my-2">
     <section class="list-section">
-    <a th:href="@{/addNewProfessor}" class="btn btn-primary btn-sm mb-3">Add New Professor</a>
-    <a th:href="@{/admin}" class="btn btn-primary btn-sm mb-3">go back to admin page</a>
+    <a th:href="@{/addNewProfessor}" class="btn btn-primary btn-sm m-3 p-2">Add New Professor</a>
+    <a th:href="@{/admin}" class="btn btn-primary btn-sm m-3 p-2">go back to admin page</a>
 </section>
+    </div>
 <footer class="footer-section">
     <div class="footer-col">
       <h3>Top Products</h3>

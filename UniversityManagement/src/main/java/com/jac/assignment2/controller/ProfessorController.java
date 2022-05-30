@@ -63,6 +63,24 @@ public class ProfessorController {
         model.addAttribute("professor", professordb);
         return "updateProfessor";
     }
+    @GetMapping("/showFormForUpdateprofessorFromProfessor/{id}")
+    public String updatePofessor(@PathVariable(value = "id") long id, Model model) throws RecordNotFoundException {
+        Professor professordb = service.findProfessorById(id);
+        model.addAttribute("professor", professordb);
+        return "updateProfessorForP";
+
+    }
+    @PostMapping("/saveProfessorForP")
+    public String saveProfessor(@Valid @ModelAttribute("professor") Professor saveProfessor, BindingResult result,Model model){
+
+        if (result.hasErrors()){
+            return "newProfessor";
+        }
+        service.saveProfessor(saveProfessor);
+
+        model.addAttribute("professor",saveProfessor);
+        return "redirect:/professorDashboard";
+    }
 
     @GetMapping("/addCourseToProfessor/{id}")
     public String addCourseToProfessor(@PathVariable Long id ,Model model) throws RecordNotFoundException {

@@ -57,7 +57,8 @@
                 <a th:href="@{/editGradeOfStudent/(courseId=${course.id},id=${gr.id})}" class="btn btn-primary">edit grades</a>
     </tr>
 </table>
-            <a th:href="@{/editGradeOfStudent/(courseId=${course.id},id=${gr.id})}" class="btn btn-primary">go back to dashboard</a>
+
+        <a th:href="@{/professorDashboard/{id}(id=${course.professors[0].id})}" class="btn btn-primary">go back to dashboard</a>
         </div>
 </section>
 <footer class="footer-section">
