@@ -67,7 +67,6 @@
             <td>
                 <a th:href="@{/showFormForUpdate/{id}(id=${st.id})}" class="btn btn-primary">Update</a>
                 <a th:href="@{/addCourse/{id}(id=${st.id})}" class="btn btn-danger">add course</a>
-                <a th:href="@{/addAddress/{id}(id=${st.id})}" class="btn btn-primary">add address</a>
                 <a th:href="@{/addProgram/{id}(id=${st.id})}" class="btn btn-primary">add program</a>
                 <a th:href="@{/deleteStudent/{id}(id=${st.id})}" class="btn btn-danger">Delete</a>
             </td>
@@ -75,7 +74,9 @@
     </table>
 
     <br>
+    <div class="add-button"
     <a th:href="@{/addNewStudent}" class="btn btn-primary btn-sm mb-3">Add New Student</a>
+        </div>
 </div>
 </section>
 
