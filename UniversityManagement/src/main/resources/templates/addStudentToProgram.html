@@ -31,8 +31,8 @@
         </ul>
     </nav>
 </header>
-    <section>
-<h4> select your program</h4>
+    <section class="form-section">
+<h3> select your program</h3>
 <form th:action="@{/addStudentToClass}" th:object="${student}" method="post">
 <ul class="mb-4 col-2" >
      <input type="hidden" th:field="${student.id}" th:value="${student.id}">
