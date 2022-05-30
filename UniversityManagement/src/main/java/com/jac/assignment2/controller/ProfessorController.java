@@ -57,25 +57,8 @@ public class ProfessorController {
 
         return "redirect:/showProfessorList";
     }
-    @GetMapping("/addProfAddress/{id}")
-    public String addProfAddress(Model model, @PathVariable Long id) throws RecordNotFoundException {
-        Address address=new Address();
-        Professor professor=service.findProfessorById(id);
-        model.addAttribute("professor",professor);
-        model.addAttribute("address", address);
-        return "newProfAddress";
-    }
-    @PostMapping("/saveProfAddress/{id}")
-    public String saveProfAddress(@PathVariable Long id,@Valid @ModelAttribute("address") Address address , BindingResult result) throws RecordNotFoundException {
-        if (result.hasErrors()){
-            return "newProfessor";
-        }
-        Professor professor=service.findProfessorById(id);
-        professor.setAddress(address);
-        addressService.saveAddress(address);
 
-        return "redirect:/showProfessorList";
-    }
+
     @GetMapping("/addCourseToProfessor/{id}")
     public String addCourseToProfessor(@PathVariable Long id ,Model model) throws RecordNotFoundException {
         Professor professor=service.findProfessorById(id);

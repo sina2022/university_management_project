@@ -55,28 +55,6 @@ public class StudentController {
         return "redirect:/students";
     }
 
-    @GetMapping("/addAddress/{id}")
-    public String addAddress(Model model, @PathVariable Long id) throws RecordNotFoundException {
-        Address address=new Address();
-        Student student=service.findStudentById(id);
-        model.addAttribute("student",student);
-        model.addAttribute("address", address);
-        return "newAddress";
-    }
-
-    @PostMapping("/saveAddress/{id}")
-    public String saveAddress( @PathVariable Long id,@Valid @ModelAttribute("address") Address address , BindingResult result) throws RecordNotFoundException {
-
-        if (result.hasErrors()){
-            return "newStudent";
-        }
-        Student student=service.findStudentById(id);
-        student.setAddress(address);
-        addressService.saveAddress(address);
-
-        return "redirect:/students";
-    }
-
 
     @GetMapping("/programs")
     public String getPrograms(Model model){

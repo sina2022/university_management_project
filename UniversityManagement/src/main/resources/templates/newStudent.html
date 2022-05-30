@@ -49,6 +49,9 @@
         <input type="text" th:field="*{email}" placeholder="enter student email" class="form-control mb-4 col-4"/>
         <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></p>
 
+        <input type="text" th:field="*{phone}" placeholder="enter phone number" class="form-control mb-4 col-4"/>
+        <p th:if="${#fields.hasErrors('phone')}" th:errorclass="error" th:errors="*{phone}"></p>
+
         <select name="gender" class="form-control mb-4 col-4">
             <option th:each="gender : ${T(com.jac.assignment2.model.Gender).values()}"
                     th:value="${gender}" th:text="${gender.toString().toLowerCase()}"></option>
